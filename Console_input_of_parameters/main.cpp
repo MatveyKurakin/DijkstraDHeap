@@ -25,8 +25,18 @@ int main() {
 
     std::cout << "r = ";
     std::cin >> r;
+    
+    /*
+    N = 100'000;
+    M = 100'000'000;
+    s = 0;
+    q = 1;
+    r = 1'000'000;
+    std::cout << "N = " << N << "\nM = " << M << "\ns = " << s << "\nq = " << q << "\nr = " << r << "\n\n";
+    */
 
-    Vector<Vector<Pair<int, int>>> adj = buildGraph(N,M,q,r);
+
+    Vector<Vector<Pair<int, int>>> adj = buildGraph(N, M, q, r);
 
     {
         std::cout << "\n2-heap\n";
