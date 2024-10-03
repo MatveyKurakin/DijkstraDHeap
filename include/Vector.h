@@ -56,7 +56,7 @@ public:
         return *this;
     }
 
-    void push_back(const T& a) {
+    void pushBack(const T& a) {
         if (size == 0) {
             size = 1;
             mem_size = 1;
@@ -81,7 +81,7 @@ public:
         }
     }
 
-    bool pop_back() {
+    bool popBack() {
         if (size > 0) {
             --size;
             if (size == mem_size - size) {

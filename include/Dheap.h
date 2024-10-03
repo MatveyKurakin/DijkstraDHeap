@@ -3,7 +3,7 @@
 #include "Vector.h"
 
 template <typename T>
-class d_heap {
+class Dheap {
     int d;
     int n;
     Vector<T> mem;
@@ -41,7 +41,7 @@ class d_heap {
     }
 
 public:
-    d_heap(int _d) {
+    Dheap(int _d) {
         d = _d;
         n = 0;
         Vector<T> mem;
@@ -77,7 +77,7 @@ public:
     void removeMin(T& mem1) {
         mem1 = mem[0];
         mem[0] = mem[n - 1];
-        mem.pop_back();
+        mem.popBack();
         --n;
         if (n > 0) {
             siftDown(0);
@@ -85,8 +85,8 @@ public:
     }
 
     void insert(T& _mem, int _ind) {
-        mem.push_back(_mem);
-        index.push_back(_ind);
+        mem.pushBack(_mem);
+        index.pushBack(_ind);
         ++n;
         siftUp(n - 1);
     }

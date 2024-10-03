@@ -26,7 +26,7 @@ int main() {
         for (int i = 0; i < M; ++i) {
             int x, y, k;
             in >> x >> y >> k;
-            adj[x].push_back(Pair<int, int>(y, k));
+            adj[x].pushBack(Pair<int, int>(y, k));
         }
         in.close();
 

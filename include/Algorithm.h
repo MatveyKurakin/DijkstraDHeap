@@ -56,7 +56,7 @@ void showVector(Vector<T> vec) {
 }
 
 template <typename T>
-void showDHeap(d_heap<T> dh) {
+void showDHeap(Dheap<T> dh) {
     std::cout << "\nname: ";
     for (int i = 0; i < dh.getSize(); ++i) {
         std::cout << dh[i].first << " ";
@@ -80,16 +80,16 @@ Vector<Vector<Pair<int, int>>> buildGraph(int n, int m, int q = 1, int r = 11) {
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n && cnt < m; ++j, ++cnt) {
             int l = rand() % (r-q) + q;
-            a[i].push_back(Pair<int, int>(j, l));
-            //a[j].push_back(Pair<int, int>(i, l));
+            a[i].pushBack(Pair<int, int>(j, l));
+            //a[j].pushBack(Pair<int, int>(i, l));
         }
     }
     return a;
 }
 
 template <typename T>
-d_heap<T> buildDHeap(Vector<T>& mem, Vector<int>& index, int d) {
-    d_heap<Pair<int, int>> dh(d);
+Dheap<T> buildDHeap(Vector<T>& mem, Vector<int>& index, int d) {
+    Dheap<Pair<int, int>> dh(d);
     for (int i = 0; i < mem.getSize(); ++i) {
         dh.insert(mem[i], index[i]);
     }
@@ -118,7 +118,7 @@ void dijkstraDHeap(Vector<int>& dist, Vector<int>& up,
         mem[i] = Pair<int, int>(i, INT_MAX);
     }
     mem[s].second = 0;
-    d_heap<Pair<int, int>> dh = buildDHeap(mem, index, d);
+    Dheap<Pair<int, int>> dh = buildDHeap(mem, index, d);
     while (dh.getSize() > 0) {
         Pair<int, int> mem1;
         dh.removeMin(mem1);
