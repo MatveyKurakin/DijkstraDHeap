@@ -113,15 +113,6 @@ public:
         return mem[i];
     }
 
-    void showMem() {
-        cout << "Mem: ";
-        for (int i = 0; i < mem_size; ++i) {
-            cout << mem[i] << " ";
-        }
-        cout << "\n";
-        cout << "Size: " << size << "\nCapacity: " << mem_size << "\n";
-    }
-
     int getCapacity() const {
         return mem_size;
     }

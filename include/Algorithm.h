@@ -45,16 +45,43 @@ T myMin(T&& a, T& b) {
     return b;
 }
 
-Vector<Vector<Pair<int, int>>> buildGraph(int n, int m) {
+template <typename T>
+void showVector(Vector<T> vec) {
+    std::cout << "Mem: ";
+    for (int i = 0; i < vec.getSize(); ++i) {
+        std::cout << vec[i] << " ";
+    }
+    std::cout << "\n";
+    std::cout << "Size: " << vec.getSize() << "\nCapacity: " << vec.getCapacity() << "\n";
+}
+
+template <typename T>
+void showDHeap(d_heap<T> dh) {
+    std::cout << "\nname: ";
+    for (int i = 0; i < dh.getSize(); ++i) {
+        std::cout << dh[i].first << " ";
+    }
+    std::cout << "\nkey: ";
+    for (int i = 0; i < dh.getSize(); ++i) {
+        std::cout << dh[i].second << " ";
+    }
+    std::cout << "\nindex: ";
+    for (int i = 0; i < dh.getIndexSize(); ++i) {
+        std::cout << dh.getIndex(i) << " ";
+    }
+    std::cout << "\n";
+}
+
+Vector<Vector<Pair<int, int>>> buildGraph(int n, int m, int q = 1, int r = 11) {
     int k = n * (n - 1) / 2;
     m = myMin(k, m);
     Vector<Vector<Pair<int, int>>> a(n);
     int cnt = 0;
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n && cnt < m; ++j, ++cnt) {
-            int l = rand() % 10 + 1;
+            int l = rand() % (r-q) + q;
             a[i].push_back(Pair<int, int>(j, l));
-            a[j].push_back(Pair<int, int>(i, l));
+            //a[j].push_back(Pair<int, int>(i, l));
         }
     }
     return a;
@@ -96,13 +123,14 @@ void dijkstraDHeap(Vector<int>& dist, Vector<int>& up,
         Pair<int, int> mem1;
         dh.removeMin(mem1);
         int i = mem1.first;
+        if (i == 2)
+            i = 2;
         dist[i] = mem1.second;
         for (int l = 0; l < adj[i].getSize(); ++l) {
             Pair<int, int> p = adj[i][l];
             int j = p.first;
-            if (j == s) continue;
             int jq = dh.getIndex(j);
-            if (/*dist[j] == INT_MAX &&*/ dh[jq].second > dist[i] + p.second) {
+            if (dh[jq].first == j && dh[jq].second > dist[i] + p.second) {
                 dh[jq].second = dist[i] + p.second;
                 dh.siftUp(jq);
                 up[j] = i;

@@ -1,0 +1,1 @@
+add_executable(Console_input_of_parameters main.cpp ../include/Algorithm.h ../include/Dheap.h ../include/Vector.h ../include/Pair.h)

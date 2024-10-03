@@ -103,19 +103,7 @@ public:
         return index[i];
     }
 
-    void showDHeap() {
-        cout << "\nname: ";
-        for (int i = 0; i < n; ++i) {
-            cout << mem[i].first << " ";
-        }
-        cout << "\nkey: ";
-        for (int i = 0; i < n; ++i) {
-            cout << mem[i].second << " ";
-        }
-        cout << "\nindex: ";
-        for (int i = 0; i < index.getSize(); ++i) {
-            cout << index[i] << " ";
-        }
-        cout << "\n";
+    int getIndexSize() {
+        return index.getSize();
     }
 };
