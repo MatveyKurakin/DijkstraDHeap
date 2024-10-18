@@ -79,7 +79,7 @@ Vector<Vector<Pair<int, int>>> buildGraph(int n, int m, int q = 1, int r = 11) {
     int cnt = 0;
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n && cnt < m; ++j, ++cnt) {
-            int l = rand() % (r-q) + q;
+            int l = rand() % (r - q + 1) + q;
             a[i].pushBack(Pair<int, int>(j, l));
             //a[j].pushBack(Pair<int, int>(i, l));
         }
@@ -123,8 +123,6 @@ void dijkstraDHeap(Vector<int>& dist, Vector<int>& up,
         Pair<int, int> mem1;
         dh.removeMin(mem1);
         int i = mem1.first;
-        if (i == 2)
-            i = 2;
         dist[i] = mem1.second;
         for (int l = 0; l < adj[i].getSize(); ++l) {
             Pair<int, int> p = adj[i][l];

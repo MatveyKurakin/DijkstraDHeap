@@ -6,6 +6,7 @@ include_directories(include)
 
 add_subdirectory(Read_from_a_file)
 add_subdirectory(Console_input_of_parameters)
+add_subdirectory(Test_graphics)
 
 # REPORT
 message( STATUS "")
