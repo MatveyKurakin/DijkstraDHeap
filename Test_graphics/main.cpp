@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include <ctime>
+#include <chrono>
 #include <fstream>
 #include "Vector.h"
 #include "Pair.h"
@@ -12,7 +12,7 @@ int main() {
 
     std::string dir = "../../test/graphics/";
 
-    {
+    /* {
         std::string name_test = "graphic_1a";
         std::cout << name_test << "\n";
         std::ofstream out(dir + name_test + ".csv");
@@ -32,32 +32,26 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << n << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }
@@ -83,32 +77,26 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << n << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }
@@ -134,32 +122,26 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << n << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }
@@ -185,32 +167,26 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << n << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }
@@ -235,36 +211,30 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << m << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }
-    }
+    }*/
 
     {
         std::string name_test = "graphic_4a";
@@ -285,34 +255,29 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << r << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
+            std::cout << r<<"\n";
         }
     }
 
@@ -335,32 +300,26 @@ int main() {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 2, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap2 = end - start;
+                timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
 
             {
                 Vector<int> dist;
                 Vector<int> up;
 
-                double start = 0.0;
-                double end = 0.0;
-
-                start = clock();
+                auto start = std::chrono::high_resolution_clock::now();
 
                 dijkstraDHeap(dist, up, adj, n, 3, s);
 
-                end = clock();
+                auto end = std::chrono::high_resolution_clock::now();
 
-                timeHeap3 = end - start;
+                timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
             }
             out << r << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }

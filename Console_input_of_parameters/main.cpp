@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include <ctime>
+#include <chrono>
 #include <fstream>
 #include "Vector.h"
 #include "Pair.h"
@@ -44,16 +44,15 @@ int main() {
         Vector<int> dist;
         Vector<int> up;
 
-        double start = 0.0;
-        double end = 0.0;
-
-        start = clock();
+        auto start = std::chrono::high_resolution_clock::now();
 
         dijkstraDHeap(dist, up, adj, N, 2, s);
 
-        end = clock();
+        auto end = std::chrono::high_resolution_clock::now();
 
-        std::cout << end - start << "\n";
+        auto timeHeap2 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        std::cout << timeHeap2 << "\n";
     }
 
     {
@@ -62,15 +61,14 @@ int main() {
         Vector<int> dist;
         Vector<int> up;
 
-        double start = 0.0;
-        double end = 0.0;
-
-        start = clock();
+        auto start = std::chrono::high_resolution_clock::now();
 
         dijkstraDHeap(dist, up, adj, N, 3, s);
 
-        end = clock();
+        auto end = std::chrono::high_resolution_clock::now();
 
-        std::cout << end - start << "\n";
+        auto timeHeap3 = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        std::cout << timeHeap3 << "\n";
     }
 }
