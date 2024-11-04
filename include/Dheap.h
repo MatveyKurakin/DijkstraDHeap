@@ -94,6 +94,10 @@ public:
     int getSize() {
         return n;
     }
+	
+	T getMin() {
+        return mem[0];
+    }
 
     T& operator[](const int i) {
         return mem[i];

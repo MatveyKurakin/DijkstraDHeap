@@ -12,7 +12,7 @@ int main() {
 
     std::string dir = "../../test/graphics/";
 
-    /* {
+    {
         std::string name_test = "graphic_1a";
         std::cout << name_test << "\n";
         std::ofstream out(dir + name_test + ".csv");
@@ -234,7 +234,7 @@ int main() {
             }
             out << m << ";" << timeHeap2 << ";" << timeHeap3 << "\n";
         }
-    }*/
+    }
 
     {
         std::string name_test = "graphic_4a";
